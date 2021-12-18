@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="EcobanPro.Vistas.Login"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+
+
+            <degradado:PancakeView.BackgroundGradientStops>
+                <degradado:GradientStopCollection>
+                    <degradado:GradientStop Color="#82FCC1" Offset="0.0" />
+                    <degradado:GradientStop Color="#BFFF97" Offset="0.9" />
+                    <!--<degradado:GradientStop Color="#3D57AB" Offset="0.5" />-->
+                    <!--<yummy:GradientStop Color="#0000FF" Offset="1" />-->
+                </degradado:GradientStopCollection>
+            </degradado:PancakeView.BackgroundGradientStops>
+
+           
+
+        </degradado:PancakeView>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <StackLayout IsVisible="{Binding VisibleInicio}"
+                VerticalOptions="Center"
+                         >
+                  <Image Source="https://i.ibb.co/pdCdwmP/arbol.png"
+                   VerticalOptions="Center"
+                   HeightRequest="200"/>
+            <StackLayout Orientation ="Horizontal"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                <Image Source="https://i.ibb.co/VtQ7qhr/ecoban1.png"
+                       HeightRequest="80"/>
+
+                <Label Text="cobank"
+                   FontSize="50"
+                       FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+             </StackLayout>
+            <StackLayout Orientation ="Vertical"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                <Label Text="Ingrese su DNI"
+                       FontSize="18"/>
+                <Entry Placeholder="DNI"
+                       Text="{Binding Identificaciontxt,Mode=TwoWay}"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#00935A"
+                       FontAttributes="Bold"
+                      />
+                <Button Text="Acceder"
+                        TextTransform="None"
+                        BackgroundColor="#00DE87"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        TextColor="White"
+                        Command="{Binding Logincommand}"
+                        />
+
+            </StackLayout>
+            </StackLayout>
+          
+            <!--<Image Source="https://i.ibb.co/wKc6FVz/carga-inalambrica.png" VerticalOptions="CenterAndExpand"
+                   Margin="15"
+                   IsVisible="{Binding VisibleFinal}"/>-->
+            <lottie:AnimationView  
+                                 Animation="reciclaload.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 IsVisible="{Binding VisibleFinal}"
+                             />
+            <StackLayout IsVisible="{Binding Sininternetv}">
+                  <lottie:AnimationView 
+                                 Animation="sininternet.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 
+                             />
+                <Label Text="Sin internet"
+                       FontSize="30"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                      FontAttributes="Bold"/>
+                <Button Text="Volver a intentarlo"
+                        HorizontalOptions="Center"
+                        CornerRadius="15"
+                        BackgroundColor="#27E58F"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+            </StackLayout>
+          
+
+        </StackLayout>
+      
+      
+    </Grid>
+</ContentPage>

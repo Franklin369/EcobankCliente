@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobanPro.Vistas.Confi.ConfProductos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Descripcion" x:Name="txtDescripcion"/>
+            <Entry Placeholder="Precio venta" x:Name="txtPrecioventa"/>
+            <Entry Placeholder="Precio Compra" x:Name="txtPreciocompra"/>
+
+            <Button x:Name="btnguardar" Text="Guardar"
+                    Clicked="btnguardar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
